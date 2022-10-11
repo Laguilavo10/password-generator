@@ -2,9 +2,9 @@ const $ = (etiqueta) => document.querySelector(etiqueta)
 
 let inputContraseña = $('#contraseña')
 let botonGenerador = $('#generadorContraseña')
-
-
 let arrayCaracteres = []
+
+
 
 function numerosEnArray() {
     let arrayNumeros = []
@@ -22,14 +22,48 @@ function letrasEnArray() {
     arrayCaracteres.push(mayusculasArray)
 }
 
+function minusculasEnArray() {
+    let minusculasArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    arrayCaracteres.push(minusculasArray)
+
+    return minusculasArray
+}
+function mayusculasEnArray(minusculas) {
+    let mayusculasArray = minusculas.map((a)=>a.toUpperCase()) //recorre el minusculasArray y las convierte en mayusculas
+
+    arrayCaracteres.push(mayusculasArray)
+    arrayCaracteres.shift()
+}
+
 function simbolosEnArray() {
     let simbolosArray = ['!', '#', '$', '%', '&', '*', '+', '-',  '/', ':', '<', '=', '>', '?', '@', '^', '_', '~', ]
     arrayCaracteres.push(simbolosArray)
 }
 
-function generadorContraseña(cantidadCaracteres = 10) {
+function generadorContraseña({cantidadCaracteres, numeros, minusculas, mayusculas, simbolos}) {
+    arrayCaracteres = []
+
+    if (cantidadCaracteres > 25) {
+        cantidadCaracteres = 12
+    }
+    if (numeros) {
+        numerosEnArray()
+    }
+    if (minusculas) {
+        minusculasEnArray()
+    }
+    if (mayusculas) {
+        mayusculasEnArray(minusculasEnArray())
+    }
+    if (simbolos) {
+        simbolosEnArray()
+    }
+
+    if (arrayCaracteres.length === 0) {
+        letrasEnArray()
+    }
+
     let contraseñaGenerada = ""
-    console.log(cantidadCaracteres);
 
     for (let index = 0; index < cantidadCaracteres; index++) {
         let arrayAleatorio = Math.floor((Math.random() * (arrayCaracteres.length)))
@@ -41,10 +75,22 @@ function generadorContraseña(cantidadCaracteres = 10) {
 }
 
 
-numerosEnArray()
-letrasEnArray()
-simbolosEnArray()
 
-botonGenerador.addEventListener('click', ()=>generadorContraseña())
+
+
+botonGenerador.addEventListener('click', ()=>{
+    let cantidadCaracteres = $('.cantidad-caracteres').value
+    let isNumerosOk = $('.numerosOK').checked
+    let isMinusculasOk = $('.minusculasOK').checked
+    let isMayusculasOk = $('.mayusculasOK').checked
+    let isSimbolosOk = $('.simbolosOK').checked
+    generadorContraseña({
+        cantidadCaracteres: cantidadCaracteres,
+        numeros:isNumerosOk,
+        minusculas: isMinusculasOk,
+        mayusculas: isMayusculasOk,
+        simbolos: isSimbolosOk,
+    })}
+    )
 
 
