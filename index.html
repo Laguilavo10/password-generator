@@ -8,7 +8,27 @@
 </head>
 <body>
     <h1>Generador de contraseñas</h1>
-    <div>
+    <div class="generator-container">
+        <div class="filters">
+            <label>Cantidad Caracteres
+                <input type="number" value="10">
+            </label>
+            <div >
+                <span>¿Quieres que contenga?</span>
+                <label>Numeros
+                    <input type="checkbox">
+                </label>
+                <label>Minusculas
+                    <input type="checkbox">
+                </label>
+                <label>Mayusculas
+                    <input type="checkbox">
+                </label>
+                <label>Simbolos
+                    <input type="checkbox">
+                </label>
+            </div>
+        </div>
         <button id="generadorContraseña">Generar Contraseña</button>
         <input type="text" id="contraseña">
     </div>

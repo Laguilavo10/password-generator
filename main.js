@@ -22,10 +22,14 @@ function letrasEnArray() {
     arrayCaracteres.push(mayusculasArray)
 }
 
-
+function simbolosEnArray() {
+    let simbolosArray = ['!', '#', '$', '%', '&', '*', '+', '-',  '/', ':', '<', '=', '>', '?', '@', '^', '_', '~', ]
+    arrayCaracteres.push(simbolosArray)
+}
 
 function generadorContraseña(cantidadCaracteres = 10) {
     let contraseñaGenerada = ""
+    console.log(cantidadCaracteres);
 
     for (let index = 0; index < cantidadCaracteres; index++) {
         let arrayAleatorio = Math.floor((Math.random() * (arrayCaracteres.length)))
@@ -39,8 +43,8 @@ function generadorContraseña(cantidadCaracteres = 10) {
 
 numerosEnArray()
 letrasEnArray()
+simbolosEnArray()
 
-botonGenerador.addEventListener('click', ()=>generadorContraseña(10))
+botonGenerador.addEventListener('click', ()=>generadorContraseña())
 
-// generadorContraseña(6)
 
