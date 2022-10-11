@@ -14,25 +14,23 @@ function numerosEnArray() {
     arrayCaracteres.push(arrayNumeros)
 }
 
-function letrasEnArray() {
-    let minusculasArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    let mayusculasArray = minusculasArray.map((a)=>a.toUpperCase()) //recorre el minusculasArray y las convierte en mayusculas
+// function letrasEnArray() {
+//     let minusculasArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+//     let mayusculasArray = minusculasArray.map((a)=>a.toUpperCase()) //recorre el minusculasArray y las convierte en mayusculas
 
-    arrayCaracteres.push(minusculasArray)
-    arrayCaracteres.push(mayusculasArray)
-}
+//     arrayCaracteres.push(minusculasArray)
+//     arrayCaracteres.push(mayusculasArray)
+// }
 
 function minusculasEnArray() {
     let minusculasArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     arrayCaracteres.push(minusculasArray)
-
-    return minusculasArray
 }
-function mayusculasEnArray(minusculas) {
+function mayusculasEnArray() {
+    let minusculas = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     let mayusculasArray = minusculas.map((a)=>a.toUpperCase()) //recorre el minusculasArray y las convierte en mayusculas
 
     arrayCaracteres.push(mayusculasArray)
-    arrayCaracteres.shift()
 }
 
 function simbolosEnArray() {
@@ -53,14 +51,15 @@ function generadorContraseña({cantidadCaracteres, numeros, minusculas, mayuscul
         minusculasEnArray()
     }
     if (mayusculas) {
-        mayusculasEnArray(minusculasEnArray())
+        mayusculasEnArray()
     }
     if (simbolos) {
         simbolosEnArray()
     }
 
-    if (arrayCaracteres.length === 0) {
-        letrasEnArray()
+    if (arrayCaracteres.length === 0) { //En caso de no tener nincun checkbox usar las letras 
+        minusculasEnArray()
+        mayusculasEnArray()
     }
 
     let contraseñaGenerada = ""
