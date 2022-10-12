@@ -26,7 +26,7 @@ function mayusculasEnArray() {
 }
 
 function simbolosEnArray() {
-    let simbolosArray = ['!', '#', '$', '%', '&', '*', '+', '-',  '/', ':', '<', '=', '>', '?', '@', '^', '_', '~', ]
+    let simbolosArray = ['!', '#', '$', '%', '&', '*', '+', '-', '=', '?', '@', '_' ]
     arrayCaracteres.push(simbolosArray)
 }
 
