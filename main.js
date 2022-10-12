@@ -5,7 +5,6 @@ let botonGenerador = $('#generadorContraseña')
 let arrayCaracteres = []
 
 
-
 function numerosEnArray() {
     let arrayNumeros = []
     for (let index = 0; index < 10; index++) {
@@ -14,18 +13,11 @@ function numerosEnArray() {
     arrayCaracteres.push(arrayNumeros)
 }
 
-// function letrasEnArray() {
-//     let minusculasArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-//     let mayusculasArray = minusculasArray.map((a)=>a.toUpperCase()) //recorre el minusculasArray y las convierte en mayusculas
-
-//     arrayCaracteres.push(minusculasArray)
-//     arrayCaracteres.push(mayusculasArray)
-// }
-
 function minusculasEnArray() {
     let minusculasArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     arrayCaracteres.push(minusculasArray)
 }
+
 function mayusculasEnArray() {
     let minusculas = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     let mayusculasArray = minusculas.map((a)=>a.toUpperCase()) //recorre el minusculasArray y las convierte en mayusculas
@@ -70,11 +62,10 @@ function generadorContraseña({cantidadCaracteres, numeros, minusculas, mayuscul
         let digitoContraseña = arrayCaracteres[arrayAleatorio][caracterAleatorio]
         contraseñaGenerada+= `${digitoContraseña}`
     }
+
     inputContraseña.value = contraseñaGenerada
+    console.log(arrayCaracteres);
 }
-
-
-
 
 
 botonGenerador.addEventListener('click', ()=>{
