@@ -6,7 +6,19 @@ let arrayCaracteres = []
 
 let inputRango = $('#input-rango')
 let recargar = $('#recargar-pass')
+let btnCopiado = $('.copiar-pass')
+let msjCopiado = $('.copiado')
 
+btnCopiado.onclick = ()=>{
+
+    console.log(inputContraseña.value)
+    inputContraseña.select()
+    document.execCommand('copye')
+    msjCopiado.classList.add('visible')
+    setTimeout(() => {
+        msjCopiado.classList.remove('visible')
+    }, 5000);
+}
 
 inputRango.onchange = ()=>{
     let cantidadCaracteres = $('#valor-rango')
@@ -14,6 +26,8 @@ inputRango.onchange = ()=>{
 }
 
 inputRango.onchange()
+
+
 function numerosEnArray() {
     let arrayNumeros = []
     for (let index = 0; index < 10; index++) {
