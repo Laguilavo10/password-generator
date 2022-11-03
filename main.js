@@ -4,7 +4,16 @@ let inputContraseña = $('#contraseña')
 let botonGenerador = $('#generadorContraseña')
 let arrayCaracteres = []
 
+let inputRango = $('#input-rango')
+let recargar = $('#recargar-pass')
 
+
+inputRango.onchange = ()=>{
+    let cantidadCaracteres = $('#valor-rango')
+    cantidadCaracteres.innerText = inputRango.value
+}
+
+inputRango.onchange()
 function numerosEnArray() {
     let arrayNumeros = []
     for (let index = 0; index < 10; index++) {
@@ -69,7 +78,7 @@ function generadorContraseña({cantidadCaracteres, numeros, minusculas, mayuscul
 
 
 botonGenerador.addEventListener('click', ()=>{
-    let cantidadCaracteres = $('.cantidad-caracteres').value
+    let cantidadCaracteres = $('#input-rango').value
     let isNumerosOk = $('.numerosOK').checked
     let isMinusculasOk = $('.minusculasOK').checked
     let isMayusculasOk = $('.mayusculasOK').checked
@@ -82,5 +91,8 @@ botonGenerador.addEventListener('click', ()=>{
         simbolos: isSimbolosOk,
     })}
     )
+
+
+
 
 

@@ -6,14 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://img.icons8.com/sf-regular-filled/48/ffffff/password.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
     <title>Generador de contraseñas</title>
 </head>
 <body>
     <h1>Generador de contraseñas</h1>
     <div class="generator-container">
+        <div class="container-pass">
+            <input type="text" id="contraseña">
+            <button class="copiar-pass"><img src="https://img.icons8.com/ios/50/null/copy.png" alt=""></button>
+            <!-- <button class="recargar-pass"><img src="https://img.icons8.com/ios-glyphs/30/null/synchronize.png" alt=""></button> -->
+            <button id="generadorContraseña">Generar Contraseña</button>
+        </div>
         <div class="filters">
+            <h2>Filtros</h2>
             <label>Cantidad Caracteres
-                <input type="number" value="10" class="cantidad-caracteres">
+                <span id="valor-rango"></span>
+                <!-- <input type="number" value="10" class="cantidad-caracteres"> -->
+                <input type="range" id="input-rango" min="5" max="30">
             </label>
             <p>¿Quieres que contenga?</p>
             <div class="filters-checkbox">
@@ -31,8 +43,6 @@
                 </label>
             </div>
         </div>
-        <button id="generadorContraseña">Generar Contraseña</button>
-        <input type="text" id="contraseña">
     </div>
     <script src="main.js"></script>
 </body>
