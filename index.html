@@ -12,23 +12,24 @@
     <title>Generador de contraseñas</title>
 </head>
 <body>
-    <h1>Generador de contraseñas</h1>
+    <h1>Generador de Contraseñas</h1>
     <div class="generator-container">
-        <div class="container-pass">
-            <input type="text" id="contraseña">
-            <button class="copiar-pass"><img src="https://img.icons8.com/ios/50/null/copy.png" alt=""></button>
-            <!-- <button class="recargar-pass"><img src="https://img.icons8.com/ios-glyphs/30/null/synchronize.png" alt=""></button> -->
-            <button id="generadorContraseña">Generar Contraseña</button>
-        </div>
         <div class="copiado">
             <span>copiado</span>
         </div>
+        <div class="container-pass">
+            <input type="text" id="contraseña" placeholder="Tu contraseña aqui">
+            <button class="btn-pass" id="generador-contraseña">Generar</button>
+            <button class="btn-pass" id="copiar-pass"><img src="https://img.icons8.com/ios/50/null/copy.png" alt=""></button>
+            <!-- <button class="recargar-pass"><img src="https://img.icons8.com/ios-glyphs/30/null/synchronize.png" alt=""></button> -->
+        </div>
+
         <div class="filters">
             <h2>Filtros</h2>
             <label>Cantidad Caracteres
                 <span id="valor-rango"></span>
                 <!-- <input type="number" value="10" class="cantidad-caracteres"> -->
-                <input type="range" id="input-rango" min="5" max="30">
+                <input type="range" id="input-rango" min="5" max="25">
             </label>
             <p>¿Quieres que contenga?</p>
             <div class="filters-checkbox">

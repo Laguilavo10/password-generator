@@ -4,31 +4,53 @@
     box-sizing: border-box;
     /* outline: 1px solid tomato; */
     font-family: 'Rubik', sans-serif;
+    color: black;
+}
+
+:root{
+    --background:#104F55;
+    --containers:#9EC5AB;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 body{
-    background-color: #14213d;
-    color: aliceblue;
+    background-color: var(--background);
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+h1{
+    margin: 50px auto;
+    text-align: center;
+    color: #01200F;
+    font-weight: bold;
+}
 .generator-container{
     display: flex;
-    margin: 20px 0 ;
     flex-direction: column;
-    /* outline: 1px solid black; */
-    justify-content: center;
-    align-items: center;
     gap: 20px;
-
+    max-width: 900px;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
 }   
 
 .container-pass{
-    background-color: red;
-    padding: 10px;
+    padding: 20px;
     display: flex;
-    gap: 5px; 
-    position: relative;  
-}
+    gap: 12px; 
+    position: relative;
+    background-color: var(--containers);
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;
+}   
 
 .copiado{
     background-color: green;
@@ -37,37 +59,51 @@ body{
     text-align: center;
     padding: 5px;
     display: none;
+    position: absolute;
+    z-index: 50;
+    top: 20px;
 }
 
 #contraseña{
     border: none;
     font-size:  1.2rem;
-    width: 300px;
+    width: 100%;
     padding: 5px;
+    border-radius: 5px;
 }
 
 #contraseña::selection{
     color: black;
 }
 
-.copiar-pass > img, .recargar-pass > img{
-    width: 25px;
+
+.btn-pass{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.btn-pass >img{
+    width: 30px;
+    height: 30px;
 }
 
 
 .filters{
     display: flex;
     flex-direction: column;
-    background-color: red;
-    padding: 10px;
+    background-color: var(--containers);
+    border-radius: 10px;
+    padding: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
     gap: 20px;
+    width: 100%;
 }
 
-label, p{
-    text-align: center;
+h2{
+    justify-self: start;
+    align-self: flex-start;
 }
 
 .filters > label{
@@ -78,6 +114,8 @@ label, p{
 .filters-checkbox{
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .filters-checkbox >label{
@@ -86,7 +124,9 @@ label, p{
 }
 
 .visible{
-    display: inline !important;
+    display: flex !important;
+    justify-content: center;
+    align-self: center;
 }
 
 

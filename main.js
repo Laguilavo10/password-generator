@@ -1,19 +1,17 @@
 const $ = (etiqueta) => document.querySelector(etiqueta)
 
 let inputContraseña = $('#contraseña')
-let botonGenerador = $('#generadorContraseña')
+let botonGenerador = $('#generador-contraseña')
 let arrayCaracteres = []
 
 let inputRango = $('#input-rango')
-let recargar = $('#recargar-pass')
-let btnCopiado = $('.copiar-pass')
+// let recargar = $('#recargar-pass')
+let btnCopiado = $('#copiar-pass')
 let msjCopiado = $('.copiado')
 
 btnCopiado.onclick = ()=>{
-
-    console.log(inputContraseña.value)
     inputContraseña.select()
-    document.execCommand('copye')
+    document.execCommand('copy')
     msjCopiado.classList.add('visible')
     setTimeout(() => {
         msjCopiado.classList.remove('visible')
@@ -56,9 +54,6 @@ function simbolosEnArray() {
 function generadorContraseña({cantidadCaracteres, numeros, minusculas, mayusculas, simbolos}) {
     arrayCaracteres = []
 
-    if (cantidadCaracteres > 25) {
-        cantidadCaracteres = 12
-    }
     if (numeros) {
         numerosEnArray()
     }
