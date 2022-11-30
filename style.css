@@ -22,11 +22,10 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 h1{
-    margin: 50px auto;
+    margin: 30px auto;
     text-align: center;
     color: #01200F;
     font-weight: bold;
@@ -127,6 +126,12 @@ h2{
     display: flex !important;
     justify-content: center;
     align-self: center;
+}
+
+@media (width < 700px){
+    body{
+        justify-content: center;
+    }
 }
 
 
